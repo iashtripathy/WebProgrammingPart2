@@ -1,0 +1,10 @@
+<web-app>
+    <servlet>
+        <servlet-name>CallLoginJavaServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CallLoginJavaServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+</web-app>

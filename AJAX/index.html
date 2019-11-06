@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        hello
+    </title>
+</head>
+
+<body>
+    <div id="aj">
+        <h1>XMLHTTP REQUEST</h1>
+        <button type="button" onclick="loadEx()">change data</button>
+    </div>
+    <script>
+        function loadEx() {
+            var xh = new XMLHttpRequest();
+            var root;
+            var name;
+            var roll;
+            var s = "";
+            xh.onreadystatechange = function() {
+                if (xh.readyState == 4 && xh.status == 200) {
+                    root = xh.responseXML.documentElement;
+                    name = root.getElementsByTagName("name");
+                    roll = root.getElementsByTagName("roll");
+                    console.log(name);
+                    s += name[0].innerHTML + "-" + roll[0].innerHTML;
+                    document.getElementById("aj").innerHTML = s;
+                }
+
+            }
+            xh.open("GET", "web.xml", true);
+            xh.send();
+        }
+    </script>
+</body>
+
+</html>

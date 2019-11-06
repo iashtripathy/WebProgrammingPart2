@@ -1,0 +1,16 @@
+import java.io.*;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class DataFromServlet extends HttpServlet{
+    public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException{
+        
+        int result = Integer.parseInt(req.getParameter("k"));
+        
+        PrintWriter out = res.getWriter();
+        
+        out.println("Result is:"+result);
+    }
+}
